@@ -7,159 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<style>
-:root{--bg:#faf6ef;--fg:#1c2530;--muted:#5d6975;--card:#fff;--accent:#c4502f;--accent2:#e8a93b;--teal:#1f6d86;--line:#eadfcf;--h1:#12324a;--h2:#2b7a96;--shadow:0 8px 28px rgba(18,50,74,.12);
-box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0d151b;--fg:#e9eef2;--muted:#9aa8b3;--card:#15212a;--accent:#f0876a;--accent2:#f0bc55;--teal:#6cc0dc;--line:#22323d;--h1:#0a2233;--h2:#1e5b73;--shadow:0 8px 28px rgba(0,0,0,.4)}}
-:root[data-theme="dark"]{--bg:#0d151b;--fg:#e9eef2;--muted:#9aa8b3;--card:#15212a;--accent:#f0876a;--accent2:#f0bc55;--teal:#6cc0dc;--line:#22323d;--h1:#0a2233;--h2:#1e5b73;--shadow:0 8px 28px rgba(0,0,0,.4)}
-html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 70px)}
-*{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--fg);font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.7}
-h1,h2,h3{font-family:"Playfair Display",Georgia,"Times New Roman",serif;line-height:1.2}
-a{color:inherit}
-
-.hero{position:relative;overflow:hidden;color:#fff;text-align:center;padding:100px 20px 160px;background:linear-gradient(165deg,var(--h1),var(--h2))}
-.hero::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at var(--gx,78%) var(--gy,20%),rgba(255,196,110,.55),transparent 38%)}
-.hero .in{position:relative;max-width:720px;margin:0 auto}
-.badge{display:inline-block;font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;padding:6px 16px;border:1px solid rgba(255,255,255,.4);border-radius:999px;margin-bottom:22px}
-.hero h1{font-size:clamp(3.2rem,13vw,6.5rem);margin:0 0 14px;letter-spacing:.02em}
-.hero p{font-size:1.15rem;opacity:.93;margin:0 auto 30px;max-width:560px}
-.btn{display:inline-block;background:var(--accent);color:#fff;font-weight:600;text-decoration:none;padding:13px 28px;border-radius:999px;transition:transform .3s cubic-bezier(.2,.8,.2,1),box-shadow .3s,filter .3s;box-shadow:0 6px 18px rgba(196,80,47,.35)}
-.btn:hover{transform:translateY(-2px);filter:brightness(1.08)}
-.btn:active{transform:scale(.96)}
-.btn.ghost{background:transparent;color:var(--teal);border:1.5px solid var(--teal);box-shadow:none;padding:9px 20px;font-size:.9rem}
-.btn.ghost:hover{background:var(--teal);color:var(--bg)}
-.land{position:absolute;left:0;right:0;bottom:-1px;width:100%;height:auto;display:block}
-
-nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;padding:10px;background:color-mix(in srgb,var(--bg) 82%,transparent);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
-.tabs{position:relative;display:flex;gap:2px;justify-content:center;flex-wrap:wrap}
-nav a{position:relative;text-decoration:none;font-size:.92rem;font-weight:500;color:var(--muted);padding:8px 16px;border-radius:999px;transition:color .35s ease,background-color .35s ease,transform .25s cubic-bezier(.2,.8,.2,1),box-shadow .35s ease}
-nav a:hover{color:var(--fg);background:color-mix(in srgb,var(--accent) 12%,transparent)}
-nav a:active{transform:scale(.93)}
-nav a.on{color:#fff;background:var(--accent);box-shadow:0 4px 14px rgba(196,80,47,.35)}
-
-main{max-width:960px;margin:0 auto;padding:0 20px 60px}
-section{padding:60px 0 6px}
-.eyebrow{color:var(--accent);font-size:.78rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase}
-h2{font-size:clamp(1.9rem,5vw,2.5rem);margin:6px 0 16px;color:var(--teal)}
-.lead{font-size:1.08rem;max-width:720px}
-
-.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin:-72px auto 0;position:relative;z-index:2;max-width:960px;padding:0 20px}
-.stat{background:var(--card);border-radius:18px;padding:20px 12px;text-align:center;box-shadow:var(--shadow);border:1px solid var(--line)}
-.stat .n{font-family:"Playfair Display",Georgia,serif;font-size:1.65rem;font-weight:700;color:var(--accent);display:block}
-.stat .l{font-size:.78rem;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
-
-.timeline{position:relative;margin:24px 0;padding-left:30px}
-.timeline::before{content:"";position:absolute;left:8px;top:6px;bottom:6px;width:2px;background:linear-gradient(var(--accent),var(--accent2))}
-.ev{position:relative;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px 20px;margin-bottom:14px;box-shadow:var(--shadow)}
-.ev::before{content:"";position:absolute;left:-29px;top:22px;width:14px;height:14px;border-radius:50%;background:var(--accent);border:3px solid var(--bg)}
-.ev .y{font-family:"Playfair Display",Georgia,serif;font-weight:700;color:var(--teal);font-size:1.15rem}
-.ev p{margin:4px 0 0;color:var(--muted)}
-
-.places{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:20px;margin-top:18px}
-.place{background:var(--card);border:1px solid var(--line);border-radius:22px;overflow:hidden;box-shadow:var(--shadow);transition:transform .35s cubic-bezier(.2,.8,.2,1)}
-.place:hover{transform:translateY(-6px)}
-.place svg{display:block;width:100%;height:auto}
-.place .b{padding:18px 20px 22px}
-.place h3{margin:0 0 6px;font-size:1.25rem}
-.place p{margin:0 0 14px;color:var(--muted);font-size:.95rem}
-
-.mapbox{margin-top:18px;background:var(--card);border:1px solid var(--line);border-radius:22px;padding:14px;box-shadow:var(--shadow)}
-.mapbox svg{display:block;width:100%;height:auto;border-radius:14px}
-.pin{cursor:pointer}
-.pin circle.dot{transition:r .25s ease}
-.pin:hover circle.dot{r:11}
-.mapbar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between;padding:14px 6px 4px}
-.mapbar span{color:var(--muted);font-size:.88rem}
-
-.split{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;margin-top:12px}
-.panel{background:linear-gradient(160deg,var(--h1),var(--h2));color:#fff;border-radius:20px;padding:26px}
-.panel h3{margin:0 0 8px;color:var(--accent2)}
-.panel p{margin:0;opacity:.93;font-size:.97rem}
-
-.note{margin-top:48px;padding:16px 18px;border-radius:14px;border:1px dashed var(--line);color:var(--muted);font-size:.85rem}
-footer{text-align:center;color:var(--muted);font-size:.85rem;padding:24px 20px 40px;border-top:1px solid var(--line)}
-
-.rv{opacity:0;transform:translateY(20px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.8,.2,1)}
-.rv.show{opacity:1;transform:none}
-@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
-
-.frame{position:relative;border-radius:14px;overflow:hidden;background:color-mix(in srgb,var(--teal) 10%,var(--card));min-height:380px}
-.frame iframe{position:relative;z-index:1;display:block;width:100%;height:420px;border:0}
-.frame-fallback{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;text-align:center;padding:20px;color:var(--muted);font-size:.95rem}
-.mapbar .btns{display:flex;gap:8px;flex-wrap:wrap}
-.mapbar .btn{padding:10px 20px;font-size:.9rem}
-
-@keyframes rise{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
-@keyframes glow{0%,100%{opacity:.75;transform:scale(1)}50%{opacity:1;transform:scale(1.12)}}
-@keyframes drift{from{transform:translateX(-14vw)}to{transform:translateX(114vw)}}
-@keyframes flow{to{stroke-dashoffset:-120}}
-@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
-.hero::before{animation:glow 6s ease-in-out infinite;transform-origin:78% 20%}
-.hero .in>*{opacity:0;animation:rise .9s cubic-bezier(.2,.8,.2,1) forwards}
-.hero .in>:nth-child(1){animation-delay:.1s}.hero .in>:nth-child(2){animation-delay:.3s}.hero .in>:nth-child(3){animation-delay:.5s}.hero .in>:nth-child(4){animation-delay:.7s}
-.hero .in{will-change:transform}
-.clouds{position:absolute;left:0;top:0;width:100%;height:100%;pointer-events:none;overflow:hidden}
-.cloud{position:absolute;left:0;border-radius:999px;background:rgba(255,255,255,.16);filter:blur(1px);animation:drift linear infinite}
-.cloud::after{content:"";position:absolute;left:22%;top:-45%;width:45%;height:150%;border-radius:50%;background:inherit}
-.c1{top:14%;width:150px;height:30px;animation-duration:70s}
-.c2{top:32%;width:110px;height:24px;animation-duration:95s;animation-delay:-40s}
-.c3{top:52%;width:180px;height:34px;animation-duration:120s;animation-delay:-75s}
-.wave{stroke-dasharray:40 20;animation:flow 6s linear infinite}
-.btn{position:relative;overflow:hidden}
-.stat{opacity:0;transform:translateY(24px) scale(.96);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.8,.2,1),box-shadow .3s}
-.stats.show .stat{opacity:1;transform:none}
-.stats.show .stat:nth-child(2){transition-delay:.12s}.stats.show .stat:nth-child(3){transition-delay:.24s}.stats.show .stat:nth-child(4){transition-delay:.36s}
-.stat:hover{transform:translateY(-4px)}
-.rv .timeline::before{transform-origin:top;transform:scaleY(0);transition:transform 1.6s cubic-bezier(.4,0,.2,1)}
-.rv.show .timeline::before{transform:scaleY(1)}
-.rv .ev,.rv .place,.rv .panel{opacity:0;transform:translateY(30px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.8,.2,1)}
-.rv.show .ev,.rv.show .place,.rv.show .panel{opacity:1;transform:none}
-.rv.show :nth-child(2 of .ev),.rv.show .place:nth-child(2),.rv.show .panel:nth-child(2){transition-delay:.15s}
-.rv.show :nth-child(3 of .ev),.rv.show .place:nth-child(3),.rv.show .panel:nth-child(3){transition-delay:.3s}
-.rv.show :nth-child(4 of .ev),.rv.show .place:nth-child(4){transition-delay:.45s}
-.rv.show :nth-child(5 of .ev){transition-delay:.6s}
-.rv.show .place:hover{transform:translateY(-8px);transition-delay:0s}
-.place svg{transition:transform .9s cubic-bezier(.2,.8,.2,1)}
-.place:hover svg{transform:scale(1.07)}
-.ev{transition:box-shadow .3s}.ev:hover{box-shadow:0 12px 32px rgba(196,80,47,.18)}
-.ev::before{transition:transform .3s}.ev:hover::before{transform:scale(1.35)}
-.badge{animation:bob 4s ease-in-out infinite}
-.ripple{position:absolute;border-radius:50%;background:rgba(255,255,255,.45);transform:scale(0);animation:rip .6s ease-out forwards;pointer-events:none}
-@keyframes rip{to{transform:scale(3);opacity:0}}
-@media (prefers-reduced-motion:reduce){.hero .in>*{opacity:1;animation:none}.cloud,.wave,.badge,.hero::before{animation:none}.stat,.rv .ev,.rv .place,.rv .panel{opacity:1;transform:none;transition:none}.rv .timeline::before{transform:none;transition:none}}
-
-.frame iframe{position:absolute;inset:0;height:100%}
-.frame-fallback{flex-direction:column;gap:8px;background:radial-gradient(circle at 30% 30%,color-mix(in srgb,var(--teal) 16%,transparent),transparent 60%),repeating-linear-gradient(0deg,transparent 0 39px,color-mix(in srgb,var(--teal) 14%,transparent) 39px 40px),repeating-linear-gradient(90deg,transparent 0 39px,color-mix(in srgb,var(--teal) 14%,transparent) 39px 40px)}
-.frame-fallback span{margin-bottom:8px}
-.mapnote{margin:12px 6px 0;color:var(--muted);font-size:.88rem}
-.lang{display:inline-flex;margin-left:10px;padding:3px;border:1px solid var(--line);border-radius:999px;background:var(--card)}
-.lang button{font:inherit;font-size:.8rem;font-weight:600;border:0;background:transparent;color:var(--muted);padding:5px 12px;border-radius:999px;cursor:pointer;transition:background-color .3s,color .3s,transform .2s}
-.lang button:hover{color:var(--fg)}.lang button:active{transform:scale(.92)}
-.lang button.on{background:var(--accent);color:#fff}
-.glow{position:fixed;left:0;top:0;width:150px;height:150px;margin:-75px 0 0 -75px;border-radius:50%;pointer-events:none;z-index:0;opacity:0;transition:opacity .4s;background:radial-gradient(circle,color-mix(in srgb,var(--accent2) 34%,transparent),transparent 68%)}
-.place,.stat,.panel{position:relative}
-.stat{overflow:hidden}
-.place::after,.stat::after,.panel::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:0;transition:opacity .35s;background:radial-gradient(260px circle at var(--mx,50%) var(--my,50%),rgba(255,255,255,.3),transparent 70%)}
-.place:hover::after,.stat:hover::after,.panel:hover::after{opacity:1}
-.btn{transition:transform .3s cubic-bezier(.2,.8,.2,1),box-shadow .3s,filter .3s,translate .25s ease-out}
-.land,.clouds{will-change:transform}
-
-.pending body{opacity:0;animation:showfb 0s 1.2s forwards}
-@keyframes showfb{to{opacity:1}}
-body{transition:opacity .4s ease}
-.tx-out{color:transparent!important;transition:color .2s ease!important}
-.tx-in{transition:color .45s ease!important}
-.rv.show .panel:nth-child(4){transition-delay:.45s}
-.coords{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin:22px 0 16px}
-.cd{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px 18px;box-shadow:var(--shadow)}
-.cd b{display:block;font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:4px}
-.cd span{font-family:"Playfair Display",Georgia,serif;font-size:1.15rem;font-weight:600}
-.cbtns{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
-.cbtns .btn{border:0;font:inherit;font-weight:600;cursor:pointer}
-.cbtns .btn.ghost{border:1.5px solid var(--teal);padding:11px 22px;font-size:.95rem}
-.cbtns .btn:not(.ghost){padding:12px 24px}
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 <header class="hero">
@@ -201,57 +49,30 @@ body{transition:opacity .4s ease}
   <div class="eyebrow">Маршрут</div>
   <h2>Красивые места</h2>
   <div class="places">
-
     <article class="place">
-      <svg viewBox="0 0 400 240" role="img" aria-label="Иллюстрация: монастырь на закате">
-        <defs><linearGradient id="g1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f3a45b"/><stop offset="1" stop-color="#f7dba0"/></linearGradient></defs>
-        <rect width="400" height="240" fill="url(#g1)"/><circle cx="310" cy="70" r="30" fill="#fff3c9" opacity=".9"/>
-        <path d="M0 190 Q100 160 200 185 T400 170 V240 H0Z" fill="#5e7a52"/>
-        <rect x="110" y="110" width="150" height="80" fill="#8a4b3a"/><rect x="150" y="80" width="70" height="110" fill="#a05a45"/>
-        <path d="M144 82 L185 40 L226 82Z" fill="#5a2f27"/><rect x="182" y="24" width="6" height="20" fill="#5a2f27"/><rect x="176" y="30" width="18" height="5" fill="#5a2f27"/>
-        <path d="M170 190v-34a15 15 0 0 1 30 0v34z" fill="#3b2019"/><rect x="122" y="130" width="14" height="24" rx="7" fill="#3b2019"/><rect x="234" y="130" width="14" height="24" rx="7" fill="#3b2019"/>
-        <path d="M40 200l14-50 14 50z M320 200l16-56 16 56z" fill="#2f4a2f"/>
-      </svg>
+      <img src="images/monastery-gate.jpg" alt="Ворота Картузского монастыря" loading="lazy" decoding="async">
       <div class="b"><h3>Картузский монастырь</h3><p>Остатки комплекса XVII века, основанного Львом Сапегой, — главное историческое место города.</p><a class="btn ghost ym" data-q="Береза Картузский монастырь" href="https://yandex.ru/maps/" target="_blank" rel="noopener">Открыть в Яндекс Картах</a></div>
     </article>
-
     <article class="place">
-      <svg viewBox="0 0 400 240" role="img" aria-label="Иллюстрация: река в лесу">
-        <defs><linearGradient id="g2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#9ed3e6"/><stop offset="1" stop-color="#e8f4ee"/></linearGradient></defs>
-        <rect width="400" height="240" fill="url(#g2)"/>
-        <path d="M0 120 Q80 80 160 110 T400 90 V240 H0Z" fill="#6f9c6b"/>
-        <g fill="#3d6b47"><path d="M30 130l16-52 16 52z"/><path d="M70 132l12-40 12 40z"/><path d="M330 110l18-58 18 58z"/><path d="M370 112l12-38 12 38z"/></g>
-        <path d="M-10 240 C100 170 150 190 210 160 S330 140 420 150 V240Z" fill="#2b7a96"/>
-        <path d="M60 220 C130 190 190 205 250 180 S350 170 400 176" stroke="#cfeaf3" stroke-width="3" fill="none" opacity=".7"/>
-        <path d="M100 235 C160 215 210 225 270 205" stroke="#cfeaf3" stroke-width="2" fill="none" opacity=".5"/>
-      </svg>
+      <img src="images/yaselda-river.jpg" alt="Разлив реки на закате" loading="lazy" decoding="async">
       <div class="b"><h3>Река Ясельда</h3><p>Тихие берега для неспешных прогулок и отдыха на природе среди полесских лугов и рощ.</p><a class="btn ghost ym" data-q="Береза река Ясельда" href="https://yandex.ru/maps/" target="_blank" rel="noopener">Открыть в Яндекс Картах</a></div>
     </article>
-
     <article class="place">
-      <svg viewBox="0 0 400 240" role="img" aria-label="Иллюстрация: озеро на рассвете">
-        <defs><linearGradient id="g3" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#b48adb"/><stop offset="1" stop-color="#f5c3a0"/></linearGradient></defs>
-        <rect width="400" height="240" fill="url(#g3)"/><circle cx="90" cy="100" r="26" fill="#fff0cf" opacity=".95"/>
-        <path d="M0 140 L70 120 L140 140 L220 112 L300 138 L400 118 V150 H0Z" fill="#5a4a7a" opacity=".65"/>
-        <rect y="150" width="400" height="90" fill="#3f7da3"/>
-        <ellipse cx="90" cy="165" rx="22" ry="4" fill="#fff0cf" opacity=".6"/><ellipse cx="90" cy="180" rx="14" ry="3" fill="#fff0cf" opacity=".4"/>
-        <path d="M250 196h90M230 210h130M270 224h70" stroke="#a6d0e6" stroke-width="3" opacity=".55"/>
-      </svg>
+      <img src="images/lake-pier.jpg" alt="Озеро с деревянным мостком" loading="lazy" decoding="async">
       <div class="b"><h3>Белоозёрск и озеро Белое</h3><p>Город-спутник района на берегу озера, известный энергетиками и тихими набережными.</p><a class="btn ghost ym" data-q="Белоозёрск Брестская область" href="https://yandex.ru/maps/" target="_blank" rel="noopener">Открыть в Яндекс Картах</a></div>
     </article>
-
     <article class="place">
-      <svg viewBox="0 0 400 240" role="img" aria-label="Иллюстрация: городской сквер">
-        <defs><linearGradient id="g4" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8fc9e3"/><stop offset="1" stop-color="#fbe9c8"/></linearGradient></defs>
-        <rect width="400" height="240" fill="url(#g4)"/>
-        <rect y="170" width="400" height="70" fill="#7aa66a"/><path d="M150 240 L190 170 L230 170 L290 240Z" fill="#e8d7b0"/>
-        <rect x="40" y="110" width="70" height="62" fill="#e08a5f"/><path d="M34 112 L75 78 L116 112Z" fill="#9a3f2b"/><rect x="66" y="138" width="18" height="34" fill="#5a2f27"/>
-        <rect x="300" y="96" width="70" height="76" fill="#f0c56b"/><path d="M294 98 L335 66 L376 98Z" fill="#b5642f"/><rect x="316" y="122" width="16" height="16" fill="#fff6dc"/><rect x="340" y="122" width="16" height="16" fill="#fff6dc"/>
-        <circle cx="150" cy="150" r="30" fill="#4c8a4f"/><rect x="146" y="170" width="8" height="16" fill="#5a3a26"/><circle cx="250" cy="156" r="24" fill="#3d7a44"/><rect x="246" y="172" width="8" height="14" fill="#5a3a26"/>
-      </svg>
-      <div class="b"><h3>Центр города и парки</h3><p>Уютные улицы, скверы и зелёные зоны: лучшее место, чтобы почувствовать характер Березы.</p><a class="btn ghost ym" data-q="Береза Брестская область центр" href="https://yandex.ru/maps/" target="_blank" rel="noopener">Открыть в Яндекс Картах</a></div>
+      <img src="images/fountain-square.jpg" alt="Храм и фонтан на площади" loading="lazy" decoding="async">
+      <div class="b"><h3>Площадь с фонтаном</h3><p>Белоснежный храм и большой фонтан на просторной площади: любимое место прогулок и фотографий.</p><a class="btn ghost ym" data-q="Береза Брестская область центр" href="https://yandex.ru/maps/" target="_blank" rel="noopener">Открыть в Яндекс Картах</a></div>
     </article>
-
+    <article class="place">
+      <img src="images/central-park.jpg" alt="Вход в Центральный парк" loading="lazy" decoding="async">
+      <div class="b"><h3>Центральный парк</h3><p>Зелёный парк с кованой аркой у входа и тенистыми аллеями для прогулок.</p><a class="btn ghost ym" data-q="Береза Центральный парк" href="https://yandex.ru/maps/" target="_blank" rel="noopener">Открыть в Яндекс Картах</a></div>
+    </article>
+    <article class="place">
+      <img src="images/memorial-square.jpg" alt="Сквер с памятником" loading="lazy" decoding="async">
+      <div class="b"><h3>Мемориальный сквер</h3><p>Тенистый сквер с памятником и мемориальными плитами.</p><a class="btn ghost ym" data-q="Береза мемориал сквер" href="https://yandex.ru/maps/" target="_blank" rel="noopener">Открыть в Яндекс Картах</a></div>
+    </article>
   </div>
 </section>
 
@@ -265,6 +86,7 @@ body{transition:opacity .4s ease}
     <div class="ev"><div class="y">1934–1939</div><p>В период пребывания в составе Польши в зданиях бывшего монастыря действует лагерь «Береза-Картузская».</p></div>
     <div class="ev"><div class="y">1939 и далее</div><p>Присоединение к БССР, послевоенное восстановление и рост города как районного центра.</p></div>
   </div>
+<div class="photos"><figure><img src="images/monastery-ruins-aerial.jpg" alt="Руины монастырского комплекса, вид сверху" loading="lazy" decoding="async"><figcaption>Руины монастырского комплекса, вид сверху</figcaption></figure><figure><img src="images/monastery-ruins.jpg" alt="Кирпичные руины среди лугов" loading="lazy" decoding="async"><figcaption>Кирпичные руины среди лугов</figcaption></figure></div>
 </section>
 
 <section id="map" class="rv">
@@ -309,152 +131,6 @@ body{transition:opacity .4s ease}
 
 </main>
 <footer>Береза · обзор города</footer>
-
-<script>
-(function(){
-  document.querySelectorAll('.ym').forEach(function(a){
-    var q=a.getAttribute('data-q');
-    if(q)a.href='https://yandex.ru/maps/?text='+encodeURIComponent(q);
-  });
-  var rv=document.querySelectorAll('.rv');
-  var links={};
-  document.querySelectorAll('nav a').forEach(function(a){links[a.getAttribute('href').slice(1)]=a});
-  if(!('IntersectionObserver' in window)){rv.forEach(function(e){e.classList.add('show')});return}
-  var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){x.target.classList.add('show');io.unobserve(x.target)}})},{threshold:.08});
-  rv.forEach(function(e){io.observe(e)});
-  var so=new IntersectionObserver(function(en){en.forEach(function(x){
-    if(x.isIntersecting){Object.keys(links).forEach(function(k){links[k].classList.toggle('on',k===x.target.id)})}
-  })},{rootMargin:'-45% 0px -50% 0px'});
-  Object.keys(links).forEach(function(id){var s=document.getElementById(id);if(s)so.observe(s)});
-})();
-</script>
-
-<script>
-(function(){
-  var reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var stats=document.getElementById('stats');
-  function count(el){
-    var to=+el.dataset.count,pre=el.dataset.pre||'',suf=el.dataset.suf||'',t0=null,dur=1400;
-    function step(t){if(!t0)t0=t;var k=Math.min((t-t0)/dur,1),e=1-Math.pow(1-k,3);el.textContent=pre+Math.round(to*e)+(el.dataset.suf||'');if(k<1)requestAnimationFrame(step)}
-    requestAnimationFrame(step);
-  }
-  if(stats){
-    if(reduce||!('IntersectionObserver' in window)){stats.classList.add('show')}
-    else{var so=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){stats.classList.add('show');stats.querySelectorAll('[data-count]').forEach(count);so.disconnect()}})},{threshold:.3});so.observe(stats)}
-  }
-  document.querySelectorAll('.btn').forEach(function(b){
-    b.addEventListener('pointerdown',function(e){
-      if(reduce)return;var r=b.getBoundingClientRect(),d=Math.max(r.width,r.height),s=document.createElement('span');
-      s.className='ripple';s.style.width=s.style.height=d+'px';s.style.left=(e.clientX-r.left-d/2)+'px';s.style.top=(e.clientY-r.top-d/2)+'px';
-      b.appendChild(s);setTimeout(function(){s.remove()},650);
-    });
-  });
-})();
-</script>
-
-<script>
-(function(){
-var EN={"Береза — обзор города": "Bereza — city overview", "Брестская область · Беларусь": "Brest Region · Belarus", "Береза": "Bereza", "Город на реке Ясельде: старинный центр Полесья и наследие Картузского монастыря.": "A town on the Yaselda River: an old Polesie centre and the legacy of the Carthusian monastery.", "Смотреть места": "Explore places", "жителей": "residents", "первое упоминание": "first mention", "основан монастырь": "monastery founded", "Брест — Минск": "Brest — Minsk", "XV век": "15th century", "М1": "M1", "О городе": "About", "История": "History", "Места": "Places", "Карта": "Map", "Экономика": "Economy", "Как добраться": "Getting there", "Знакомство": "Introduction", "Путь во времени": "Through time", "Маршрут": "Route", "Где находится": "Location", "Труд и производство": "Work and industry", "В дорогу": "On the road", "Красивые места": "Beautiful places", "Береза — административный центр Березовского района Брестской области. Город раскинулся в Полесье на реке Ясельде, на пути между Брестом и Минском. Это спокойный районный центр с уютной застройкой, зелёными зонами и заметным историческим наследием.": "Bereza is the administrative centre of Bereza District in Brest Region. The town lies in Polesie on the Yaselda River, on the way between Brest and Minsk. It is a calm district centre with cosy streets, green areas and a noticeable historical legacy.", "Первые письменные упоминания о поселении Береза в составе Великого княжества Литовского.": "The first written mentions of the settlement of Bereza, then part of the Grand Duchy of Lithuania.", "Лев Сапега основывает монастырь картузов, ставший центром духовной и хозяйственной жизни округи.": "Lew Sapieha founds a Carthusian monastery that becomes the spiritual and economic centre of the area.", "XIX век": "19th century", "В составе Российской империи монастырь закрывают, а город развивается как торговый и транспортный узел.": "Under the Russian Empire the monastery is closed, while the town grows as a trade and transport hub.", "В период пребывания в составе Польши в зданиях бывшего монастыря действует лагерь «Береза-Картузская».": "While the town is part of Poland, the Bereza Kartuska camp operates in the former monastery buildings.", "1939 и далее": "1939 onward", "Присоединение к БССР, послевоенное восстановление и рост города как районного центра.": "Joining the Byelorussian SSR, post-war reconstruction and growth of the town as a district centre.", "Картузский монастырь": "Carthusian Monastery", "Остатки комплекса XVII века, основанного Львом Сапегой, — главное историческое место города.": "The remains of the 17th-century complex founded by Lew Sapieha are the town's main historic site.", "Открыть в Яндекс Картах": "Open in Yandex Maps", "Река Ясельда": "Yaselda River", "Тихие берега для неспешных прогулок и отдыха на природе среди полесских лугов и рощ.": "Quiet banks for slow walks and time in nature among Polesie meadows and groves.", "Белоозёрск и озеро Белое": "Beloozersk and Lake Beloye", "Город-спутник района на берегу озера, известный энергетиками и тихими набережными.": "A satellite town of the district on a lake shore, known for its power engineers and quiet embankments.", "Центр города и парки": "Town centre and parks", "Уютные улицы, скверы и зелёные зоны: лучшее место, чтобы почувствовать характер Березы.": "Cosy streets, squares and green areas: the best place to feel the character of Bereza.", "Иллюстрация: монастырь на закате": "Illustration: monastery at sunset", "Иллюстрация: река в лесу": "Illustration: river in the forest", "Иллюстрация: озеро на рассвете": "Illustration: lake at dawn", "Иллюстрация: городской сквер": "Illustration: town square", "Береза, Брестская область": "Bereza, Brest Region", "Карта Яндекса загружается по кнопке.": "The Yandex map loads on demand.", "Показать интерактивную карту": "Show interactive map", "Если карта не появилась, её показ блокирует платформа: используйте кнопки ниже.": "If the map did not appear, the platform is blocking it: use the buttons below.", "Или откройте место сразу в приложении Яндекс Карт.": "Or open the place directly in Yandex Maps.", "Монастырь": "Monastery", "Береза на Яндекс Картах": "Bereza on Yandex Maps", "Энергетика": "Energy", "В Белоозёрске работает Березовская ГРЭС — крупный энергетический объект страны.": "The Bereza power plant in Beloozersk is one of the country's major energy facilities.", "Логистика": "Logistics", "Расположение на магистрали Брест — Минск поддерживает транспорт и торговлю.": "Its position on the Brest — Minsk highway supports transport and trade.", "Проще всего приехать на автомобиле или автобусе по трассе М1 из Бреста, Минска и соседних городов. Есть и железнодорожное сообщение по линии Брест — Барановичи.": "The easiest way is by car or bus along the M1 highway from Brest, Minsk and neighbouring towns. There is also a rail link on the Brest — Baranovichi line.", "Береза · обзор города": "Bereza · city overview", "«Савушкин продукт»": "“Savushkin Product”", "Один из крупных белорусских производителей молочной продукции; в Березе действует производственный филиал компании.": "One of Belarus's major dairy producers, with a production branch of the company operating in Bereza.", "Березовский мясоконсервный комбинат": "Bereza Meat-Canning Plant", "Одно из крупнейших в стране предприятий по переработке мяса: колбасы и мясные деликатесы.": "One of the country's largest meat-processing enterprises, known for sausages and meat delicacies.", "Координаты": "Coordinates", "52.5335° с. ш., 24.9830° в. д.": "52.5335° N, 24.9830° E", "До Бреста": "To Brest", "около 100 км": "about 100 km", "До Минска": "To Minsk", "около 230 км": "about 230 km", "Скопировать координаты": "Copy coordinates", "Скопировано": "Copied"};
-var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
-var fine=matchMedia('(hover: hover) and (pointer: fine)').matches;
-var nodes=[],attrs=[],lang='ru';
-var tw=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT,{acceptNode:function(n){var p=n.parentNode;if(!p||/SCRIPT|STYLE/.test(p.nodeName)||(p.closest&&p.closest('[data-count]')))return NodeFilter.FILTER_REJECT;var t=n.nodeValue.trim();return t&&EN.hasOwnProperty(t)?NodeFilter.FILTER_ACCEPT:NodeFilter.FILTER_REJECT}});
-while(tw.nextNode()){var n=tw.currentNode,v=n.nodeValue;nodes.push({n:n,ru:v.trim(),a:v.match(/^\s*/)[0],b:v.match(/\s*$/)[0]})}
-document.querySelectorAll('[aria-label],[title]').forEach(function(el){['aria-label','title'].forEach(function(k){var v=el.getAttribute(k);if(v&&EN.hasOwnProperty(v))attrs.push({el:el,k:k,ru:v})})});
-var titleRu=document.title;
-function tr(ru){return lang==='en'?EN[ru]:ru}
-function setLang(l){
-  lang=l;
-  nodes.forEach(function(o){o.n.nodeValue=o.a+tr(o.ru)+o.b});
-  attrs.forEach(function(o){o.el.setAttribute(o.k,tr(o.ru))});
-  document.title=tr(titleRu);document.documentElement.lang=l;
-  document.querySelectorAll('.n[data-count]').forEach(function(el){
-    if(el.dataset.suf){el.dataset.suf=l==='en'?'k':' \u0442\u044b\u0441.';el.textContent=(el.dataset.pre||'')+el.dataset.count+el.dataset.suf}
-  });
-  document.querySelectorAll('.lang button').forEach(function(b){b.classList.toggle('on',b.dataset.l===l)});
-  try{localStorage.setItem('lang',l)}catch(e){}
-}
-var fadeEls=[];nodes.forEach(function(o){var q=o.n.parentNode;if(fadeEls.indexOf(q)<0)fadeEls.push(q)});
-document.querySelectorAll('.n[data-count]').forEach(function(e){fadeEls.push(e)});
-var switching=false;
-function switchLang(l){
-  if(l===lang||switching)return;
-  document.querySelectorAll('.lang button').forEach(function(b){b.classList.toggle('on',b.dataset.l===l)});
-  if(reduce){setLang(l);return}
-  switching=true;
-  fadeEls.forEach(function(e){e.classList.remove('tx-in');e.classList.add('tx-out')});
-  setTimeout(function(){
-    setLang(l);
-    fadeEls.forEach(function(e){e.classList.remove('tx-out');e.classList.add('tx-in')});
-    setTimeout(function(){fadeEls.forEach(function(e){e.classList.remove('tx-in')});switching=false},480);
-  },230);
-}
-document.querySelectorAll('.lang button').forEach(function(b){b.addEventListener('click',function(){switchLang(b.dataset.l)})});
-var cb=document.getElementById('copycoords');
-if(cb)cb.addEventListener('click',function(){
-  var txt='52.5335, 24.9830',tn=cb.firstChild;
-  function done(){tn.nodeValue=tr('Скопировано');setTimeout(function(){tn.nodeValue=tr('Скопировать координаты')},1600)}
-  function fb(){var t=document.createElement('textarea');t.value=txt;t.style.position='fixed';t.style.opacity='0';document.body.appendChild(t);t.select();try{document.execCommand('copy')}catch(e){}t.remove();done()}
-  try{navigator.clipboard.writeText(txt).then(done,fb)}catch(e){fb()}
-});
-setLang('en');
-document.documentElement.classList.remove('pending');
-
-/* map: load Yandex embed on demand */
-var lm=document.getElementById('loadmap');
-if(lm)lm.addEventListener('click',function(){
-  var f=document.createElement('iframe');
-  f.src='https://yandex.ru/map-widget/v1/?ll=24.98%2C52.53&z=13&l=map&pt=24.98%2C52.53%2Cpm2rdl';
-  f.title=tr('Береза на Яндекс Картах');f.setAttribute('allowfullscreen','');
-  document.getElementById('mapframe').appendChild(f);
-  document.getElementById('mapfb').style.display='none';
-  document.getElementById('mapnote').hidden=false;
-});
-
-/* hero: scroll + mouse parallax, cursor glow (single rAF loop) */
-var hero=document.querySelector('.hero'),inner=document.querySelector('.hero .in'),clouds=document.querySelector('.clouds'),land=document.querySelector('.land');
-var S={sy:0,tx:0,ty:0,cx:0,cy:0,gx:innerWidth/2,gy:innerHeight/2,tgx:innerWidth/2,tgy:innerHeight/2},run=false,glow=null;
-function apply(){
-  inner.style.transform='translate('+(-S.cx*24)+'px,'+(S.sy*.25-S.cy*16)+'px)';
-  inner.style.opacity=String(Math.max(1-S.sy/650,0));
-  clouds.style.transform='translate('+(S.cx*40)+'px,'+(S.cy*20)+'px)';
-  land.style.transform='translateX('+(-S.cx*16)+'px) scale(1.03)';
-  hero.style.setProperty('--gx',(78+S.cx*14)+'%');hero.style.setProperty('--gy',(20+S.cy*14)+'%');
-  if(glow)glow.style.transform='translate('+S.gx+'px,'+S.gy+'px)';
-}
-function loop(){
-  S.cx+=(S.tx-S.cx)*.08;S.cy+=(S.ty-S.cy)*.08;S.gx+=(S.tgx-S.gx)*.16;S.gy+=(S.tgy-S.gy)*.16;
-  apply();
-  if(Math.abs(S.tx-S.cx)>.001||Math.abs(S.ty-S.cy)>.001||Math.abs(S.tgx-S.gx)>.5||Math.abs(S.tgy-S.gy)>.5)requestAnimationFrame(loop);else run=false;
-}
-function kick(){if(!run){run=true;requestAnimationFrame(loop)}}
-if(!reduce){
-  addEventListener('scroll',function(){S.sy=Math.min(scrollY,700);kick()},{passive:true});
-}
-if(!reduce&&fine){
-  hero.addEventListener('pointermove',function(e){if(e.pointerType!=='mouse')return;var r=hero.getBoundingClientRect();S.tx=(e.clientX-r.left)/r.width-.5;S.ty=(e.clientY-r.top)/r.height-.5;kick()});
-  hero.addEventListener('pointerleave',function(){S.tx=0;S.ty=0;kick()});
-  glow=document.createElement('div');glow.className='glow';document.body.appendChild(glow);
-  addEventListener('pointermove',function(e){if(e.pointerType!=='mouse')return;S.tgx=e.clientX;S.tgy=e.clientY;glow.style.opacity='1';kick()});
-  document.documentElement.addEventListener('mouseleave',function(){glow.style.opacity='0'});
-  /* 3D tilt + spotlight */
-  document.querySelectorAll('.place,.stat,.panel').forEach(function(el){
-    el.addEventListener('pointermove',function(e){
-      if(e.pointerType!=='mouse')return;
-      var r=el.getBoundingClientRect(),px=(e.clientX-r.left)/r.width,py=(e.clientY-r.top)/r.height;
-      el.style.setProperty('--mx',(px*100)+'%');el.style.setProperty('--my',(py*100)+'%');
-      el.style.transition='transform .15s ease-out,opacity .7s ease';el.style.transitionDelay='0s';
-      el.style.transform='perspective(900px) rotateX('+((.5-py)*10)+'deg) rotateY('+((px-.5)*12)+'deg) translateY(-6px)';
-    });
-    el.addEventListener('pointerleave',function(){el.style.transform='';el.style.transition='';el.style.transitionDelay=''});
-  });
-  /* magnetic buttons */
-  document.querySelectorAll('.btn').forEach(function(b){
-    b.addEventListener('pointermove',function(e){var r=b.getBoundingClientRect();b.style.translate=((e.clientX-r.left-r.width/2)*.22)+'px '+((e.clientY-r.top-r.height/2)*.3)+'px'});
-    b.addEventListener('pointerleave',function(){b.style.translate=''});
-  });
-}
-})();
-</script>
+<script src="script.js"></script>
 </body>
 </html>

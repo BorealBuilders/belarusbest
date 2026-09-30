@@ -4,32 +4,21 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Береза — обзор города</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
+<noscript><style>.pending body{visibility:visible}</style></noscript>
 </head>
 <body>
 <header class="hero">
-  <div class="clouds" aria-hidden="true"><span class="cloud c1"></span><span class="cloud c2"></span><span class="cloud c3"></span></div>
-  <div class="in">
-    <span class="badge">Брестская область · Беларусь</span>
-    <h1>Береза</h1>
-    <p>Город на реке Ясельде: старинный центр Полесья и наследие Картузского монастыря.</p>
-    <a class="btn" href="#places">Смотреть места</a>
-  </div>
-  <svg class="land" viewBox="0 0 1200 150" preserveAspectRatio="none" aria-hidden="true">
-    <path d="M0 96 Q160 40 320 84 T640 74 T940 90 T1200 62 V150 H0Z" fill="#0a2233" opacity=".28"/>
-    <g fill="#0c2b3a" opacity=".5"><path d="M70 108l18-48 18 48z"/><path d="M122 108l14-38 14 38z"/><path d="M990 108l18-52 18 52z"/><path d="M1044 108l14-40 14 40z"/><path d="M1100 108l16-46 16 46z"/></g>
-    <path d="M0 112 Q220 90 440 110 T840 108 T1200 102 V150 H0Z" fill="var(--bg)"/>
-    <path d="M0 130 Q300 116 600 130 T1200 124" class="wave" stroke="#e8a93b" stroke-width="3" fill="none" opacity=".6"/>
-  </svg>
+  <p class="badge">Брестская область · Беларусь</p>
+  <h1>Береза</h1>
+  <p>Город на реке Ясельде: старинный центр Полесья и наследие Картузского монастыря.</p>
+  <a class="btn" href="#places">Смотреть места</a>
 </header>
 
-<div class="stats" id="stats">
-  <div class="stat"><span class="n" data-count="29" data-pre="~" data-suf=" тыс.">~29 тыс.</span><span class="l">жителей</span></div>
+<div class="stats">
+  <div class="stat"><span class="n">~29 тыс.</span><span class="l">жителей</span></div>
   <div class="stat"><span class="n">XV век</span><span class="l">первое упоминание</span></div>
-  <div class="stat"><span class="n" data-count="1648">1648</span><span class="l">основан монастырь</span></div>
+  <div class="stat"><span class="n">1648</span><span class="l">основан монастырь</span></div>
   <div class="stat"><span class="n">М1</span><span class="l">Брест — Минск</span></div>
 </div>
 
@@ -39,50 +28,46 @@
 </div></nav>
 
 <main>
-<section id="about" class="rv">
-  <div class="eyebrow">Знакомство</div>
+<section id="about">
   <h2>О городе</h2>
   <p class="lead">Береза — административный центр Березовского района Брестской области. Город раскинулся в Полесье на реке Ясельде, на пути между Брестом и Минском. Это спокойный районный центр с уютной застройкой, зелёными зонами и заметным историческим наследием.</p>
 </section>
 
-<section id="places" class="rv">
-  <div class="eyebrow">Маршрут</div>
+<section id="places">
   <h2>Красивые места</h2>
   <div class="places">
     <article class="place">
-      <img src="images/monastery-gate.jpg" alt="Ворота Картузского монастыря" loading="lazy" decoding="async">
+      <img src="images/monastery-gate.jpg" alt="Ворота Картузского монастыря" loading="lazy">
       <div class="b"><h3>Картузский монастырь</h3><p>Остатки комплекса XVII века, основанного Львом Сапегой, — главное историческое место города.</p><a class="btn ghost ym" data-q="Береза Картузский монастырь" href="https://yandex.ru/maps/" target="_blank" rel="noopener">Открыть в Яндекс Картах</a></div>
     </article>
     <article class="place">
-      <img src="images/yaselda-river.jpg" alt="Разлив реки на закате" loading="lazy" decoding="async">
+      <img src="images/yaselda-river.jpg" alt="Разлив реки на закате" loading="lazy">
       <div class="b"><h3>Река Ясельда</h3><p>Тихие берега для неспешных прогулок и отдыха на природе среди полесских лугов и рощ.</p><a class="btn ghost ym" data-q="Береза река Ясельда" href="https://yandex.ru/maps/" target="_blank" rel="noopener">Открыть в Яндекс Картах</a></div>
     </article>
     <article class="place">
-      <img src="images/lake-pier.jpg" alt="Озеро с деревянным мостком" loading="lazy" decoding="async">
+      <img src="images/lake-pier.jpg" alt="Озеро с деревянным мостком" loading="lazy">
       <div class="b"><h3>Белоозёрск и озеро Белое</h3><p>Город-спутник района на берегу озера, известный энергетиками и тихими набережными.</p><a class="btn ghost ym" data-q="Белоозёрск Брестская область" href="https://yandex.ru/maps/" target="_blank" rel="noopener">Открыть в Яндекс Картах</a></div>
     </article>
     <article class="place">
-      <img src="images/fountain-square.jpg" alt="Храм и фонтан на площади" loading="lazy" decoding="async">
+      <img src="images/fountain-square.jpg" alt="Храм и фонтан на площади" loading="lazy">
       <div class="b"><h3>Старинный парк</h3><p>Белоснежный храм и большой фонтан на просторной площади: любимое место прогулок и фотографий.</p><a class="btn ghost ym" data-q="Береза Брестская область центр" href="https://yandex.ru/maps/" target="_blank" rel="noopener">Открыть в Яндекс Картах</a></div>
     </article>
     <article class="place">
-      <img src="images/central-park.jpg" alt="Вход в Центральный парк" loading="lazy" decoding="async">
+      <img src="images/central-park.jpg" alt="Вход в Центральный парк" loading="lazy">
       <div class="b"><h3>Центральный парк</h3><p>Зелёный парк с кованой аркой у входа и тенистыми аллеями для прогулок.</p><a class="btn ghost ym" data-q="Береза Центральный парк" href="https://yandex.ru/maps/" target="_blank" rel="noopener">Открыть в Яндекс Картах</a></div>
     </article>
     <article class="place">
-      <img src="images/memorial-square.jpg" alt="Сквер с памятником" loading="lazy" decoding="async">
+      <img src="images/memorial-square.jpg" alt="Сквер с памятником" loading="lazy">
       <div class="b"><h3>Мемориальный сквер</h3><p>Тенистый сквер с памятником и мемориальными плитами.</p><a class="btn ghost ym" data-q="Береза мемориал сквер" href="https://yandex.ru/maps/" target="_blank" rel="noopener">Открыть в Яндекс Картах</a></div>
     </article>
   </div>
 </section>
 
-<section id="map" class="rv">
-  <div class="eyebrow">Где находится</div>
+<section id="map">
   <h2>Карта</h2>
   <div class="mapbox">
     <div class="frame" id="mapframe">
       <div class="frame-fallback" id="mapfb">
-        <svg width="46" height="46" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z" fill="var(--accent)"/></svg>
         <b>Береза, Брестская область</b>
         <span>Карта Яндекса загружается по кнопке.</span>
         <button class="btn" id="loadmap" type="button">Показать интерактивную карту</button>
@@ -93,8 +78,7 @@
   </div>
 </section>
 
-<section id="economy" class="rv">
-  <div class="eyebrow">Труд и производство</div>
+<section id="economy">
   <h2>Экономика</h2>
   <div class="split">
     <div class="panel"><h3>«Савушкин продукт»</h3><p>Один из крупных белорусских производителей молочной продукции; в Березе действует производственный филиал компании.</p></div>
@@ -104,8 +88,7 @@
   </div>
 </section>
 
-<section id="travel" class="rv">
-  <div class="eyebrow">В дорогу</div>
+<section id="travel">
   <h2>Как добраться</h2>
   <p class="lead">Проще всего приехать на автомобиле или автобусе по трассе М1 из Бреста, Минска и соседних городов. Есть и железнодорожное сообщение по линии Брест — Барановичи.</p>
   <div class="coords">
